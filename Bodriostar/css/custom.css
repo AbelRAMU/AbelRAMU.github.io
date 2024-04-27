@@ -1,4 +1,64 @@
-.fuenteblanca{
+.gamefont {
     color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+.titlefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 40px;
+}
+.buttonfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 20px;
+}
+.titlesection {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    padding-left: 50px;
+    font-size: 30px;
+}
+.cardtitlefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.carddatefont {
+    color: gray;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 30px;   
+}
+.cardcontentfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 20px;
+}
+.footerbarfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-size: 20px;
+    padding-left: 100px;
+}
+.elementor-2450 .elementor-element.elementor-element-5f4cb5f.elementor-wc-products ul.products li.product:hover .button{
+    color: #000000;
+    background-color: orange;
+    border-color: #fff;
+    }
+
+.video1{
+    
+}
+.video2{
 
 }
