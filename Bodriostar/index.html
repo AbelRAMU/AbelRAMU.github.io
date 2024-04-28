@@ -12,10 +12,10 @@
 <body style="background-color: rgb(15, 15, 15);">
 
 <!--Barra superior-->
-<nav class="navbar navbar-expand-lg navbar-dark border border-dark" style="background-color: black; padding: 20px;">
+<nav class="navbar navbar-expand-lg navbar-dark border border-dark" style="background-color: black;">
   <div class="container-fluid ">
-    <a class="navbar-brand" href="https://abelramu.github.io/Bodriostar/index.html">
-      <img src="img/rockstar.png" alt="" class="nav-link disabled" href="https://abelramu.github.io/Bodriostar/index.html" tabindex="-1" aria-disabled="true" width="70px" >
+    <a class="navbar-brand" href="#">
+      <img src="img/rockstar.png" alt="" width="30" height="30">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -82,18 +82,17 @@
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: white; padding-left: 40px;">Soporte</a>
         </li>
-        <li class="nav-item" style="padding-left: 400px;">
+        <li class="nav-item" style="padding-left: 40px;">
           <button type="button" class="btn btn-warning cardtitlefont" style="color: black; font-size: 15px;">OBTENER LAUNCHER</button>
-        </li>
-        <li>
-          <img src="img/search.png"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: white; padding-left: 40px; padding-right: 30px;">
-        </li>
-        <li>
-          <img src="img/accounticon.png" class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" style="color: white; width: 47px;"> 
         </li>
 
       </ul>
+      <form class="d-flex">
+                <img src="img/search.png" width="30px" height="35x" style="padding-top: 5px; "><img src="img/accounticon.png" width="30px" height="35px" style="padding-top: 5px;">
 
+
+        
+      </form>
     </div>
   </div>
 </nav>
@@ -101,12 +100,12 @@
 <!--Carrusel principal
 No se pueden ni imaginar el tiempo que nos costo encontrar una forma
 de hacer esto. Este mensaje es patrocinado por Abel a las 12:39 a.m.-->
-<div id="carouselExampleIndicators" class="carousel " data-bs-ride="carousel">
-  <div class="carousel-indicators" style="padding-left: 1000px; bottom: 100px;">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" style="width: 80px; height: 5px; border: 5px; border-radius: 10px;" ></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2" style="width: 80px; height: 5px; border: 5px; border-radius: 10px;"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3" style="width: 80px; height: 5px; border: 5px; border-radius: 10px;"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4" style="width: 80px; height: 5px; border: 5px; border-radius: 10px;"></button>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators style=" style="padding-left: 800px;">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
 
   </div>
   <div class="carousel-inner">
@@ -115,18 +114,13 @@ de hacer esto. Este mensaje es patrocinado por Abel a las 12:39 a.m.-->
       <div class="card mb-3" style="max-width: 100%; background-color: black;">
         <div class="row g-10">
           <div class="col-md-8">
-
-            <a href="video1GTAVI.html">
-              <img src="img/gta6.webp" class="img-fluid rounded-start" alt="..." style="width: 100%;">
-            </a>
-
-
+            <img src="img/gta6.webp" class="img-fluid rounded-start" alt="..." style="width: 100%;">
           </div>
           <div class="col-md-3">
-            <div class="card-body" style="padding-left: 70px;">
-              <h5 class="card-title gamefont" style="font-size: 17px;"><br><br><br>Grand Theft Auto VI</h5>
-              <p class="card-text titlefont" style="font-size: 55px; padding-bottom: 10px;" >Primer tráiler</p>
-              <button type="button" class="btn btn-outline-warning buttonfont " style="padding: 20px; padding-left: 60px; padding-right: 60px; border-color: white;">VER AHORA</button>
+            <div class="card-body">
+              <h5 class="card-title gamefont"><br><br><br>Grand Theft Auto VI</h5>
+              <p class="card-text titlefont">Primer tráiler</p>
+              <button type="button" class="btn btn-outline-light buttonfont" style="padding: 20px; padding-left: 60px; padding-right: 60px;">VER AHORA</button>
             </div>
           </div>
         </div>
@@ -137,15 +131,13 @@ de hacer esto. Este mensaje es patrocinado por Abel a las 12:39 a.m.-->
       <div class="card mb-3" style="max-width: 100%; background-color: black;">
         <div class="row g-10">
           <div class="col-md-8">
-            <a href="video2CLUQUINBEL.html">
-              <img src="img/farmraid.jpg" class="img-fluid rounded-start" alt="..." style="width: 100%;">
-            </a>
+            <img src="img/farmraid.jpg" class="img-fluid rounded-start" alt="..." style="width: 100%;">
           </div>
           <div class="col-md-4">
-            <div class="card-body" style="padding-left: 70px;">
-              <h5 class="card-title gamefont" style="font-size: 17px;"><br><br><br>Grand Theft Auto Online</h5>
-              <p class="card-text titlefont" style="font-size: 55px; padding-bottom: 10px;">Asalto a Cluckin' Bell</p>
-              <button type="button" class="btn btn-outline-warning buttonfont " style="padding: 20px; padding-left: 60px; padding-right: 60px; border-color: white; ">VER AHORA</button>
+            <div class="card-body">
+              <h5 class="card-title gamefont"><br><br><br>Grand Theft Auto Online</h5>
+              <p class="card-text titlefont">Asalto a Cluckin' Bell</p>
+              <button type="button" class="btn btn-outline-light buttonfont" style="padding: 20px; padding-left: 60px; padding-right: 60px;">VER AHORA</button>
             </div>
           </div>
         </div>
@@ -156,18 +148,13 @@ de hacer esto. Este mensaje es patrocinado por Abel a las 12:39 a.m.-->
       <div class="card mb-3" style="max-width: 100%; background-color: black;">
         <div class="row g-10">
           <div class="col-md-8">
-
-            <a href="video3CHOPSHOP.html">
-              <img src="img/chopshop.jpg" class="img-fluid rounded-start" alt="..." style="width: 100%;">
-            </a>
-
+            <img src="img/chopshop.jpg" class="img-fluid rounded-start" alt="..." style="width: 100%;">
           </div>
-
-          <div class="col-md-4">
-            <div class="card-body" style="padding-left: 70px;">
-              <h5 class="card-title gamefont" style="font-size: 17px;"><br><br><br>Grand Theft Auto Online</h5>
-              <p class="card-text titlefont" style="font-size: 55px; padding-bottom: 10px;">El gran deshuese</p>
-              <button type="button" class="btn btn-outline-warning buttonfont" style="padding: 20px; padding-left: 60px; padding-right: 60px; border-color: white;">VER AHORA</button>
+          <div class="col-md-3">
+            <div class="card-body">
+              <h5 class="card-title gamefont"><br><br><br>Grand Theft Auto Online</h5>
+              <p class="card-text titlefont">El gran deshuese</p>
+              <button type="button" class="btn btn-outline-light buttonfont" style="padding: 20px; padding-left: 60px; padding-right: 60px;">VER AHORA</button>
             </div>
           </div>
         </div>
@@ -178,17 +165,14 @@ de hacer esto. Este mensaje es patrocinado por Abel a las 12:39 a.m.-->
         <div class="card mb-3" style="max-width: 100%; background-color: black;">
           <div class="row g-10">
             <div class="col-md-8">
-
-              <a href="video4DRAGRACES.html">
-                <img src="img/dragraces.jpg" class="img-fluid rounded-start" alt="..." style="width: 100%;">
-              </a>
+              <img src="img/dragraces.jpg" class="img-fluid rounded-start" alt="..." style="width: 100%;">
             </div>
             <div class="col-md-4">
                        <!--col-md-3 reemplazado por un col-md-4 por que el titulo es mas largo-->
-              <div class="card-body" style="padding-left: 70px;">
-                <h5 class="card-title gamefont" style="font-size: 17px;"><br><br><br>Grand Theft Auto Online</h5>
-                <p class="card-text titlefont" style="font-size: 55px; ">Ve a toda velocidad hacia la victoria en las nuevas carreras de aceleración</p>
-                <button type="button" class="btn btn-outline-warning buttonfont " style="padding: 20px; padding-left: 60px; padding-right: 60px; border-color: white;">VER AHORA</button>
+              <div class="card-body">
+                <h5 class="card-title gamefont"><br><br><br>Grand Theft Auto Online</h5>
+                <p class="card-text titlefont">Ve a toda velocidad hacia la victoria en las nuevas carreras de aceleración</p>
+                <button type="button" class="btn btn-outline-light buttonfont" style="padding: 20px; padding-left: 60px; padding-right: 60px;">VER AHORA</button>
               </div>
             </div>
           </div>
