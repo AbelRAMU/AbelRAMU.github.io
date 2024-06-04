@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2024 a las 03:01:37
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 04-06-2024 a las 03:42:58
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,7 +31,16 @@ CREATE TABLE `artistas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripcion` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `artistas`
+--
+
+INSERT INTO `artistas` (`id`, `nombre`, `descripcion`) VALUES
+(1, 'Lena Raine', 'Lena Raine is an award-winning composer known for her work on the video games Celeste, Minecraft, and Sackboy: A Big Adventure among many others. She also releases her own solo albums such as the 2019 album Oneknowing, and the 2016 EP Singularity (under the name Kuraine).'),
+(2, 'bo en', 'www.bo-en.info'),
+(3, 'Bukano', 'Youtuber Peruano, dedicado a crear parodias de canciones, videojuegos, series de televisión , etc.\r\n\r\nEspero que te gusten mis canciones, va!');
 
 -- --------------------------------------------------------
 
@@ -44,7 +52,7 @@ CREATE TABLE `artistas-canciones` (
   `id` int(11) NOT NULL,
   `artista-id` int(11) NOT NULL,
   `cancion-id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -60,7 +68,7 @@ CREATE TABLE `canciones` (
   `fecha` date NOT NULL,
   `activo` tinyint(1) NOT NULL,
   `foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -72,7 +80,7 @@ CREATE TABLE `favoritas` (
   `id` int(11) NOT NULL,
   `usuario-id` int(11) NOT NULL,
   `cancion-id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -83,7 +91,22 @@ CREATE TABLE `favoritas` (
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `generos`
+--
+
+INSERT INTO `generos` (`id`, `nombre`) VALUES
+(1, 'Cumbia'),
+(2, 'Pop'),
+(3, 'Ambiente'),
+(4, 'Jazz'),
+(5, 'Rap'),
+(6, 'Electronica'),
+(7, 'Funk'),
+(8, 'Trap'),
+(9, 'Rock and roll');
 
 -- --------------------------------------------------------
 
@@ -95,7 +118,17 @@ CREATE TABLE `membresias` (
   `id` int(11) NOT NULL,
   `descripcion` varchar(150) NOT NULL,
   `precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `membresias`
+--
+
+INSERT INTO `membresias` (`id`, `descripcion`, `precio`) VALUES
+(1, '1 cuenta Premium\r\nCancela en cualquier momento\r\nSuscripción o un pago único', 129),
+(2, '1 cuenta Premium verificada\r\nDescuento para estudiantes que cumplen con los requisitos\r\nCancela en cualquier momento\r\nSuscripción o un pago único', 69),
+(3, '2 cuentas Premium\r\nCancela en cualquier momento\r\nSuscripción o un pago único', 169),
+(4, 'Hasta 6 cuentas Kids o Premium\r\nControla el contenido marcado como explícito.\r\nCancela en cualquier momento\r\nSuscripción o un pago único', 199);
 
 -- --------------------------------------------------------
 
@@ -111,7 +144,7 @@ CREATE TABLE `playlists` (
   `tabla-canciones` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `publico` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -124,7 +157,7 @@ CREATE TABLE `playlists-canciones` (
   `playlist-id` int(11) NOT NULL,
   `cancion-id` int(11) NOT NULL,
   `usuario-id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -137,7 +170,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(150) NOT NULL,
   `correo` varchar(150) NOT NULL,
   `membresia-id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Índices para tablas volcadas
@@ -215,7 +248,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `artistas-canciones`
@@ -239,13 +272,13 @@ ALTER TABLE `favoritas`
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `membresias`
 --
 ALTER TABLE `membresias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `playlists`
