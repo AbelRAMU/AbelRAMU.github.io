@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2024 a las 02:53:36
+-- Tiempo de generación: 08-06-2024 a las 03:19:33
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -226,7 +226,7 @@ INSERT INTO `artistas-canciones` (`id`, `artista-id`, `cancion-id`) VALUES
 CREATE TABLE `canciones` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `genero-id` int(11) NOT NULL,
+  `genero_id` int(11) NOT NULL,
   `duracion` time NOT NULL,
   `fecha` date NOT NULL,
   `activo` tinyint(1) NOT NULL,
@@ -237,10 +237,10 @@ CREATE TABLE `canciones` (
 -- Volcado de datos para la tabla `canciones`
 --
 
-INSERT INTO `canciones` (`id`, `nombre`, `genero-id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
+INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
 (1, 'Pigstep', 1, '00:02:28', '2020-06-23', 1, 'pigstep.png'),
 (2, 'Otherside', 1, '00:03:30', '2021-11-30', 1, 'otherside.png'),
-(3, 'Respite', 1, '00:02:22', '2018-01-25', 1, 'respite.png'),
+(3, 'Respite', 1, '00:02:22', '2024-01-02', 1, 'respite.png'),
 (4, 'First Steps', 1, '00:02:20', '2018-01-25', 1, 'first_steps.png'),
 (5, 'Confronting Myself', 1, '00:02:52', '2018-01-25', 1, 'confronting_myself.png'),
 (6, 'Awake', 1, '00:01:49', '2018-01-25', 1, 'awake.png'),
@@ -691,14 +691,14 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL,
   `correo` varchar(150) NOT NULL,
-  `membresia-id` int(11) NOT NULL
+  `membresia_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `membresia-id`) VALUES
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `membresia_id`) VALUES
 (1, 'juanito23', 'juanito23@gmail.com', 1),
 (2, 'maria.luz88', 'maria.luz88@yahoo.com', 2),
 (3, 'carlos_x', 'carlos_x@hotmail.com', 3),
@@ -733,7 +733,7 @@ ALTER TABLE `artistas-canciones`
 --
 ALTER TABLE `canciones`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `genero-id` (`genero-id`);
+  ADD KEY `genero-id` (`genero_id`);
 
 --
 -- Indices de la tabla `favoritas`
@@ -776,7 +776,7 @@ ALTER TABLE `playlists-canciones`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `membresia-id` (`membresia-id`);
+  ADD KEY `membresia-id` (`membresia_id`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -851,7 +851,7 @@ ALTER TABLE `artistas-canciones`
 -- Filtros para la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  ADD CONSTRAINT `canciones_ibfk_1` FOREIGN KEY (`genero-id`) REFERENCES `generos` (`id`);
+  ADD CONSTRAINT `canciones_ibfk_1` FOREIGN KEY (`genero_id`) REFERENCES `generos` (`id`);
 
 --
 -- Filtros para la tabla `favoritas`
@@ -878,7 +878,7 @@ ALTER TABLE `playlists-canciones`
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`membresia-id`) REFERENCES `membresias` (`id`);
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`membresia_id`) REFERENCES `membresias` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
