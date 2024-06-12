@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-06-2024 a las 03:19:33
+-- Tiempo de generación: 12-06-2024 a las 03:02:06
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -52,20 +52,20 @@ INSERT INTO `artistas` (`id`, `nombre`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `artistas-canciones`
+-- Estructura de tabla para la tabla `artistas_canciones`
 --
 
-CREATE TABLE `artistas-canciones` (
+CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
   `artista-id` int(11) NOT NULL,
   `cancion-id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `artistas-canciones`
+-- Volcado de datos para la tabla `artistas_canciones`
 --
 
-INSERT INTO `artistas-canciones` (`id`, `artista-id`, `cancion-id`) VALUES
+INSERT INTO `artistas_canciones` (`id`, `artista-id`, `cancion-id`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 3),
@@ -397,15 +397,15 @@ INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `acti
 
 CREATE TABLE `favoritas` (
   `id` int(11) NOT NULL,
-  `usuario-id` int(11) NOT NULL,
-  `cancion-id` int(11) NOT NULL
+  `usuario_id` int(11) NOT NULL,
+  `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `favoritas`
 --
 
-INSERT INTO `favoritas` (`id`, `usuario-id`, `cancion-id`) VALUES
+INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
 (1, 1, 3),
 (2, 1, 24),
 (3, 1, 45),
@@ -661,25 +661,188 @@ INSERT INTO `membresias` (`id`, `descripcion`, `precio`) VALUES
 CREATE TABLE `playlists` (
   `id` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL,
-  `usuario-id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
   `duracion` time NOT NULL,
-  `tabla-canciones` int(11) NOT NULL,
+  `total_canciones` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `publico` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Volcado de datos para la tabla `playlists`
+--
+
+INSERT INTO `playlists` (`id`, `nombre`, `usuario_id`, `duracion`, `total_canciones`, `descripcion`, `publico`) VALUES
+(1, 'Temazos bukano', 10, '18:47:18', 10, 'Los temazos de bukano', 1),
+(2, 'Aventura Celeste', 1, '01:20:30', 15, 'Música de Lena Raine, ideal para una aventura relajante', 1),
+(3, 'Pale Machine Hits', 2, '00:45:20', 10, 'Lo mejor de Bo en, disfruta de su estilo único', 1),
+(4, 'Regional Mexicano con Bukano', 3, '01:10:00', 12, 'Los mejores éxitos de Bukano', 1),
+(5, 'Peso Pluma Exclusivo', 4, '00:50:45', 10, 'Descubre el estilo único de Peso Pluma', 1),
+(6, 'Fiesta con Bad Bunny', 5, '01:30:00', 18, 'Los éxitos más grandes de Bad Bunny', 1),
+(7, 'Viaje con Kikuo', 6, '00:55:30', 11, 'Explora el mundo musical de Kikuo', 1),
+(8, 'Stardew Valley Vibes', 7, '01:15:45', 14, 'Música de ConcernedApe para relajarte', 1),
+(9, 'Undertale Soundtrack', 8, '01:25:20', 13, 'La banda sonora completa de Toby Fox para Undertale', 1),
+(10, 'Journey Musical Experience', 9, '01:35:00', 16, 'La música de Austin Wintory te lleva de viaje', 1),
+(11, 'Minecraft Melodies', 10, '02:00:00', 20, 'Las mejores composiciones de C418 para Minecraft', 1);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `playlists-canciones`
+-- Estructura de tabla para la tabla `playlists_canciones`
 --
 
-CREATE TABLE `playlists-canciones` (
+CREATE TABLE `playlists_canciones` (
   `id` int(11) NOT NULL,
-  `playlist-id` int(11) NOT NULL,
-  `cancion-id` int(11) NOT NULL,
-  `usuario-id` int(11) NOT NULL
+  `playlist_id` int(11) NOT NULL,
+  `cancion_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `playlists_canciones`
+--
+
+INSERT INTO `playlists_canciones` (`id`, `playlist_id`, `cancion_id`, `usuario_id`) VALUES
+(1, 2, 1, 10),
+(2, 1, 1, 1),
+(3, 1, 2, 1),
+(4, 1, 3, 1),
+(5, 1, 4, 1),
+(6, 1, 5, 1),
+(7, 1, 6, 1),
+(8, 1, 7, 1),
+(9, 1, 8, 1),
+(10, 1, 9, 1),
+(11, 1, 10, 1),
+(12, 1, 11, 1),
+(13, 1, 12, 1),
+(14, 1, 13, 1),
+(15, 1, 14, 1),
+(16, 1, 15, 1),
+(17, 2, 16, 2),
+(18, 2, 17, 2),
+(19, 2, 18, 2),
+(20, 2, 19, 2),
+(21, 2, 20, 2),
+(22, 2, 21, 2),
+(23, 2, 22, 2),
+(24, 2, 23, 2),
+(25, 2, 24, 2),
+(26, 2, 25, 2),
+(27, 3, 26, 3),
+(28, 3, 27, 3),
+(29, 3, 28, 3),
+(30, 3, 29, 3),
+(31, 3, 30, 3),
+(32, 3, 31, 3),
+(33, 3, 32, 3),
+(34, 3, 33, 3),
+(35, 3, 34, 3),
+(36, 3, 35, 3),
+(37, 3, 36, 3),
+(38, 3, 37, 3),
+(39, 4, 38, 4),
+(40, 4, 39, 4),
+(41, 4, 40, 4),
+(42, 4, 41, 4),
+(43, 4, 42, 4),
+(44, 4, 43, 4),
+(45, 4, 44, 4),
+(46, 4, 45, 4),
+(47, 4, 46, 4),
+(48, 4, 47, 4),
+(49, 5, 48, 5),
+(50, 5, 49, 5),
+(51, 5, 50, 5),
+(52, 5, 51, 5),
+(53, 5, 52, 5),
+(54, 5, 53, 5),
+(55, 5, 54, 5),
+(56, 5, 55, 5),
+(57, 5, 56, 5),
+(58, 5, 57, 5),
+(59, 5, 58, 5),
+(60, 5, 59, 5),
+(61, 5, 60, 5),
+(62, 5, 61, 5),
+(63, 5, 62, 5),
+(64, 5, 63, 5),
+(65, 5, 64, 5),
+(66, 5, 65, 5),
+(67, 6, 66, 6),
+(68, 6, 67, 6),
+(69, 6, 68, 6),
+(70, 6, 69, 6),
+(71, 6, 70, 6),
+(72, 6, 71, 6),
+(73, 6, 72, 6),
+(74, 6, 73, 6),
+(75, 6, 74, 6),
+(76, 6, 75, 6),
+(77, 6, 76, 6),
+(78, 7, 77, 7),
+(79, 7, 78, 7),
+(80, 7, 79, 7),
+(81, 7, 80, 7),
+(82, 7, 81, 7),
+(83, 7, 82, 7),
+(84, 7, 83, 7),
+(85, 7, 84, 7),
+(86, 7, 85, 7),
+(87, 7, 86, 7),
+(88, 7, 87, 7),
+(89, 7, 88, 7),
+(90, 7, 89, 7),
+(91, 7, 90, 7),
+(92, 8, 91, 8),
+(93, 8, 92, 8),
+(94, 8, 93, 8),
+(95, 8, 94, 8),
+(96, 8, 95, 8),
+(97, 8, 96, 8),
+(98, 8, 97, 8),
+(99, 8, 98, 8),
+(100, 8, 99, 8),
+(101, 8, 100, 8),
+(102, 8, 101, 8),
+(103, 8, 102, 8),
+(104, 8, 103, 8),
+(105, 9, 104, 9),
+(106, 9, 105, 9),
+(107, 9, 106, 9),
+(108, 9, 107, 9),
+(109, 9, 108, 9),
+(110, 9, 109, 9),
+(111, 9, 110, 9),
+(112, 9, 111, 9),
+(113, 9, 112, 9),
+(114, 9, 113, 9),
+(115, 9, 114, 9),
+(116, 9, 115, 9),
+(117, 9, 116, 9),
+(118, 9, 117, 9),
+(119, 9, 118, 9),
+(120, 9, 119, 9),
+(121, 10, 120, 10),
+(122, 10, 121, 10),
+(123, 10, 122, 10),
+(124, 10, 123, 10),
+(125, 10, 124, 10),
+(126, 10, 125, 10),
+(127, 10, 126, 10),
+(128, 10, 127, 10),
+(129, 10, 128, 10),
+(130, 10, 129, 10),
+(131, 10, 130, 10),
+(132, 10, 131, 10),
+(133, 10, 132, 10),
+(134, 10, 133, 10),
+(135, 10, 134, 10),
+(136, 10, 135, 10),
+(137, 10, 136, 10),
+(138, 10, 137, 10),
+(139, 10, 138, 10),
+(140, 10, 139, 10);
 
 -- --------------------------------------------------------
 
@@ -721,9 +884,9 @@ ALTER TABLE `artistas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `artistas-canciones`
+-- Indices de la tabla `artistas_canciones`
 --
-ALTER TABLE `artistas-canciones`
+ALTER TABLE `artistas_canciones`
   ADD PRIMARY KEY (`id`),
   ADD KEY `artista-id` (`artista-id`),
   ADD KEY `cancion-id` (`cancion-id`);
@@ -740,8 +903,8 @@ ALTER TABLE `canciones`
 --
 ALTER TABLE `favoritas`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `cancion-id` (`cancion-id`),
-  ADD KEY `usuario-id` (`usuario-id`);
+  ADD KEY `cancion-id` (`cancion_id`),
+  ADD KEY `usuario-id` (`usuario_id`);
 
 --
 -- Indices de la tabla `generos`
@@ -760,16 +923,16 @@ ALTER TABLE `membresias`
 --
 ALTER TABLE `playlists`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario-id` (`usuario-id`);
+  ADD KEY `usuario-id` (`usuario_id`);
 
 --
--- Indices de la tabla `playlists-canciones`
+-- Indices de la tabla `playlists_canciones`
 --
-ALTER TABLE `playlists-canciones`
+ALTER TABLE `playlists_canciones`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `playlist-id` (`playlist-id`),
-  ADD KEY `cancion-id` (`cancion-id`),
-  ADD KEY `usuario-id` (`usuario-id`);
+  ADD KEY `playlist-id` (`playlist_id`),
+  ADD KEY `cancion-id` (`cancion_id`),
+  ADD KEY `usuario-id` (`usuario_id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -789,9 +952,9 @@ ALTER TABLE `artistas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
 
 --
--- AUTO_INCREMENT de la tabla `artistas-canciones`
+-- AUTO_INCREMENT de la tabla `artistas_canciones`
 --
-ALTER TABLE `artistas-canciones`
+ALTER TABLE `artistas_canciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
 
 --
@@ -822,13 +985,13 @@ ALTER TABLE `membresias`
 -- AUTO_INCREMENT de la tabla `playlists`
 --
 ALTER TABLE `playlists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de la tabla `playlists-canciones`
+-- AUTO_INCREMENT de la tabla `playlists_canciones`
 --
-ALTER TABLE `playlists-canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `playlists_canciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -841,11 +1004,11 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `artistas-canciones`
+-- Filtros para la tabla `artistas_canciones`
 --
-ALTER TABLE `artistas-canciones`
-  ADD CONSTRAINT `artistas-canciones_ibfk_1` FOREIGN KEY (`artista-id`) REFERENCES `artistas` (`id`),
-  ADD CONSTRAINT `artistas-canciones_ibfk_2` FOREIGN KEY (`cancion-id`) REFERENCES `canciones` (`id`);
+ALTER TABLE `artistas_canciones`
+  ADD CONSTRAINT `artistas_canciones_ibfk_1` FOREIGN KEY (`artista-id`) REFERENCES `artistas` (`id`),
+  ADD CONSTRAINT `artistas_canciones_ibfk_2` FOREIGN KEY (`cancion-id`) REFERENCES `canciones` (`id`);
 
 --
 -- Filtros para la tabla `canciones`
@@ -857,22 +1020,22 @@ ALTER TABLE `canciones`
 -- Filtros para la tabla `favoritas`
 --
 ALTER TABLE `favoritas`
-  ADD CONSTRAINT `favoritas_ibfk_1` FOREIGN KEY (`cancion-id`) REFERENCES `canciones` (`id`),
-  ADD CONSTRAINT `favoritas_ibfk_2` FOREIGN KEY (`usuario-id`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `favoritas_ibfk_1` FOREIGN KEY (`cancion_id`) REFERENCES `canciones` (`id`),
+  ADD CONSTRAINT `favoritas_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `playlists`
 --
 ALTER TABLE `playlists`
-  ADD CONSTRAINT `playlists_ibfk_1` FOREIGN KEY (`usuario-id`) REFERENCES `usuarios` (`id`);
+  ADD CONSTRAINT `playlists_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
--- Filtros para la tabla `playlists-canciones`
+-- Filtros para la tabla `playlists_canciones`
 --
-ALTER TABLE `playlists-canciones`
-  ADD CONSTRAINT `playlists-canciones_ibfk_1` FOREIGN KEY (`playlist-id`) REFERENCES `playlists` (`id`),
-  ADD CONSTRAINT `playlists-canciones_ibfk_2` FOREIGN KEY (`cancion-id`) REFERENCES `canciones` (`id`),
-  ADD CONSTRAINT `playlists-canciones_ibfk_3` FOREIGN KEY (`usuario-id`) REFERENCES `usuarios` (`id`);
+ALTER TABLE `playlists_canciones`
+  ADD CONSTRAINT `playlists_canciones_ibfk_1` FOREIGN KEY (`playlist_id`) REFERENCES `playlists` (`id`),
+  ADD CONSTRAINT `playlists_canciones_ibfk_2` FOREIGN KEY (`cancion_id`) REFERENCES `canciones` (`id`),
+  ADD CONSTRAINT `playlists_canciones_ibfk_3` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `usuarios`
