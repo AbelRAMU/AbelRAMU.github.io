@@ -1,0 +1,82 @@
+.gamefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+.titlefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 40px;
+}
+.buttonfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 20px;
+}
+.titlesection {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    padding-left: 50px;
+    font-size: 30px;
+}
+.cardtitlefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.carddatefont {
+    color: gray;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 30px;   
+}
+.cardcontentfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 10px;
+}
+.footerbarfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-size: 20px;
+    padding-left: 100px;
+}
+
+.videothemefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 100px;
+}
+.videodatefont {
+    color: gray;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 50px;
+}
+.videotitlefont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 100px;
+}
+.videodescriptionfont {
+    color: white;
+    font-family: 'Helvetica Now Display';
+    font-size: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
