@@ -3,9 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto final parcial #3</title>
-</head>
-<body>
-    Ramirez Urias Abel
+    <title>Proyecto final #3</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/font/stylesheet.css">
+    <script src="js/jquery-3.7.1.js"></script>
+</head> 
+<body style="background-color:rgb(0, 50, 0);">
+
+<!--Barra superior-->
+<nav class="navbar navbar-expand-lg navbar-dark border border-dark" style="background-color: rgb(0, 100, 0);">
+  <div class="container-fluid ">
+    <a class="navbar-brand" href="index.html">
+      <img src="abelito.gif" alt="" href="index.html" width="40" height="40">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      
+        <li class="nav-item">
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<p class="titlesection">Proyecto final #3 (Abre la imagen en una nueva pestaña)</p>
+<div class="row row-cols-1 row-cols-md-3 g-5" style="width: 100%; padding-left: 3%;">
+    
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta1.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener el listado de todos los alumnos de la facultad<span class="carddatefont">Consulta 1</span></h5>
+        <p class="card-text cardcontentfont">SELECT * FROM alumnos</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta2.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener el listado de cursos (nombres) y las asignaturas que tiene<span class="carddatefont">Consulta 2</span></h5>
+        <p class="card-text cardcontentfont">SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso=asignatura.curso
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta3.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener el listado de alumnos que tengan beca<span class="carddatefont">Consulta 3</span></h5>
+        <p class="card-text cardcontentfont">SELECT alumno.nombre, alumno.apellido1, alumno.apellido2 FROM alumno WHERE alumno.beca LIKE 'si%'</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta4.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener el listado de profesores (nombre y apellido), y su numero de contacto<span class="carddatefont">Consulta 4</span></h5>
+        <p class="card-text cardcontentfont">SELECT profesor.nombre,profesor.apellido1,profesor.apellido2, tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof ON tlfcontactoprof.idProfesor=profesor.idProfesor</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta5.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener el listado de los alumnos (todos los campos) que estan inscritos a la asignatura de programacion<span class="carddatefont">Consulta 5</span></h5>
+        <p class="card-text cardcontentfont">SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura WHERE asignatura.nombre = "Programacion"</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta6.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener listado de los profesores y asignaturas que imparten<span class="carddatefont">Consulta 6</span></h5>
+        <p class="card-text cardcontentfont">SELECT profesor.*, asignatura.* FROM profesor INNER JOIN asignatura ON profesor.idProfesor = asignatura.coordinador ORDER BY profesor.nombre, asignatura.nombre
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta7.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Mostrar la asignatura que tiene mas alumnos inscritos y su total<span class="carddatefont">Consulta 7</span></h5>
+        <p class="card-text cardcontentfont">SELECT asignatura.nombre AS nombre_asignatura, COUNT(matricula.idAlumno) AS total_alumnos_inscritos FROM asignatura INNER JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura GROUP BY asignatura.idAsignatura ORDER BY total_alumnos_inscritos DESC</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta8.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener el listado de alumnos que les da clase con el profesor id PR048 (jose manuel), sin importar en que asignatura este inscrito<span class="carddatefont">Consulta 8</span></h5>
+        <p class="card-text cardcontentfont">SELECT alumno.* FROM alumno INNER JOIN matricula ON alumno.idAlumno = matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura WHERE asignatura.coordinador = 'PR016'        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta9.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener lista de cursos con asignatura y maestro que las imparte<span class="carddatefont">Consulta 9</span></h5>
+        <p class="card-text cardcontentfont">Otro dia joven</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100 border border-dark" style="background-color: black;">
+      <img src="img/Consulta10.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title cardtitlefont">Obtener listado de alumnos con asignaturas que cursan, profesor que las imparte y curso a que pertenecen<span class="carddatefont">Consulta 10</span></h5>
+        <p class="card-text cardcontentfont">Otro dia joven</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
 </body>
 </html>
+
+
+
+
+
