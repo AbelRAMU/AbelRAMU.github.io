@@ -110,7 +110,7 @@
       <img src="img/Consulta9.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title cardtitlefont">Obtener lista de cursos con asignatura y maestro que las imparte<span class="carddatefont">Consulta 9</span></h5>
-        <p class="card-text cardcontentfont">Otro dia joven</p>
+        <p class="card-text cardcontentfont">SELECT curso.nombreDescriptivo, asignatura.nombre, profesor.nombre, profesor.apellido1, profesor.apellido2 FROM curso JOIN asignatura ON curso.idCurso = asignatura.curso JOIN impartir ON asignatura.idAsignatura = impartir.idAsignatura JOIN profesor ON impartir.idProfesor = profesor.idProfesor ORDER BY curso.idCurso, asignatura.idAsignatura, profesor.idProfesor;</p>
       </div>
     </div>
   </div>
@@ -119,7 +119,7 @@
       <img src="img/Consulta10.png" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title cardtitlefont">Obtener listado de alumnos con asignaturas que cursan, profesor que las imparte y curso a que pertenecen<span class="carddatefont">Consulta 10</span></h5>
-        <p class="card-text cardcontentfont">Otro dia joven</p>
+        <p class="card-text cardcontentfont">SELECT alumno.nombre, alumno.apellido1, alumno.apellido2, asignatura.nombre, profesor.nombre, profesor.apellido1, profesor.apellido2, curso.nombreDescriptivo FROM alumno JOIN matricula ON alumno.idAlumno = matricula.idAlumno JOIN asignatura ON matricula.idAsignatura = asignatura.idAsignatura JOIN impartir ON asignatura.idAsignatura = impartir.idAsignatura JOIN profesor ON impartir.idProfesor = profesor.idProfesor JOIN curso ON asignatura.curso = curso.idCurso ORDER BY alumno.idAlumno, asignatura.idAsignatura;</p>
       </div>
     </div>
   </div>
