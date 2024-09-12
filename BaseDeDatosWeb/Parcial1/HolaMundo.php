@@ -7,7 +7,7 @@
     $numero2 = "34";
 
 
-    $total = $numero + $numero2;
+    $total = $numero + $numero2; 
 
     echo "TOTAL = " . $total;
 
